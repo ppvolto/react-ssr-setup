@@ -1,13 +1,9 @@
-// @flow
-import * as React from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import css from './Features.module.css';
 
-type PropsT = {
-    t: (string) => string,
-};
-
-const Features = ({ t }: PropsT) => (
+const Features = ({ t }) => (
     <>
         <h2>{t('features')}</h2>
         <ul className={css.wrapper}>
@@ -32,4 +28,7 @@ const Features = ({ t }: PropsT) => (
     </>
 );
 
+Features.propTypes = {
+    t: PropTypes.func.isRequired,
+};
 export default withTranslation()(Features);
