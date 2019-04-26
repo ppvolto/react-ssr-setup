@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
-import { useTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import { setLocale } from './store/app/actions';
 import { ReactComponent as ReactLogo } from './assets/react.svg';
 import Features from './components/Features';
@@ -47,4 +47,4 @@ const mapDispatchToProps = {
 export default connect(
     null,
     mapDispatchToProps
-)(App);
+)(withTranslation()(App));

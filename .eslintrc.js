@@ -1,10 +1,17 @@
 const paths = require('./config/paths');
 
 module.exports = {
-    parser: 'babel-eslint',
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+        },
+    },
     extends: [
         'prettier',
+        'prettier/@typescript-eslint',
         'prettier/react',
+        'plugin:@typescript-eslint/recommended',
         'plugin:react/recommended',
         'plugin:import/errors',
         'plugin:import/warnings',
@@ -16,12 +23,15 @@ module.exports = {
         __BROWSER__: true,
         __SERVER__: true,
     },
-    plugins: ['babel', 'import', 'prettier', 'security'],
+    plugins: ['babel', 'import', 'prettier', 'security', '@typescript-eslint'],
     settings: {
         'import/resolver': {
             node: {
                 paths: paths.resolveModules,
             },
+        },
+        'import/parsers': {
+            '@typescript-eslint/parser': ['.js', '.ts', '.tsx', '.jsx'],
         },
         react: {
             version: 'detect',

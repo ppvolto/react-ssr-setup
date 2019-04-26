@@ -43,7 +43,7 @@ app.use(
 app.use(serverRender());
 
 // eslint-disable-next-line no-unused-vars
-const errorHandler: ErrorRequestHandler = (err, _, res) => {
+const errorHandler = (err, _, res) => {
     return res.status(404).json({
         status: 'error',
         message: err.message,
@@ -52,9 +52,9 @@ const errorHandler: ErrorRequestHandler = (err, _, res) => {
             process.env.NODE_ENV === 'development' &&
             (err.stack || '')
                 .split('\n')
-                .map((line: string) => line.trim())
-                .map((line: string) => line.split(path.sep).join('/'))
-                .map((line: string) =>
+                .map((line) => line.trim())
+                .map((line) => line.split(path.sep).join('/'))
+                .map((line) =>
                     line.replace(
                         process
                             .cwd()

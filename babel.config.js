@@ -11,6 +11,7 @@ module.exports = {
             },
         ],
         '@babel/preset-react',
+        '@babel/typescript',
     ],
     plugins: [
         '@babel/plugin-proposal-object-rest-spread',
