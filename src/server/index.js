@@ -1,5 +1,5 @@
 // import React from 'react';
-import express, { ErrorRequestHandler } from 'express';
+import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import chalk from 'chalk';

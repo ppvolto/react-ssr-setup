@@ -13,7 +13,7 @@
     "build:with-stats": "cross-env NODE_ENV=production webpack --config config/webpack.config.js/client.prod.js --json > build/client/static/bundle-stats.json",
     "link-react": "yarn-or-npm link react react-dom",
     "lint": "concurrently \"yarn-or-npm lint:js\" \"yarn-or-npm lint:css\"",
-    "lint:js": "eslint ./src --ext .js,.jsx",
+    "lint:js": "eslint src --ext .js,.jsx,.ts,.tsx",
     "plop": "plop",
     "start": "cross-env NODE_ENV=development node scripts/start.js",
     "start:analyzer": "webpack-bundle-analyzer build/client/static/bundle-stats.json",

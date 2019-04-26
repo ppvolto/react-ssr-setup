@@ -9,10 +9,10 @@ import Features from './components/Features';
 import css from './App.module.css';
 
 function App(props) {
-    const [t] = useTranslation();
     const setLanguage = React.useCallback((e) => {
         props.setLocale(e.currentTarget.value);
     }, []);
+    const { t } = props;
     return (
         <div className={css.wrapper}>
             <Helmet defaultTitle="React SSR Starter" titleTemplate="%s – React SSR Starter" />
